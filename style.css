@@ -33,6 +33,12 @@ h2 {
   font-weight: 400;
 }
 
+.difficulty select {
+  font: inherit;
+  border: #000066 solid 2px;
+  padding: .5rem 1rem;
+}
+
 .esse {
   display: flex;
   align-items: center;
@@ -54,6 +60,7 @@ h2 {
   box-sizing: border-box;
   margin-inline: auto;
   margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
 .square {

@@ -1,18 +1,41 @@
 const grid = document.querySelector('.grid')
 const squares = document.querySelectorAll('.square')
 const mole = document.querySelector('.mole')
+const dropDown = document.querySelector('select')
+const difficultySelector = document.querySelector('.difficulty')
+// const mediumLevel = document.getElementById('level-2')
+// const easyLevel = document.getElementById('level-1')
+// const hardLevel = document.getElementById('level-3')
+// const asianLevel = document.getElementById('level-4')
 
 const timeleft = document.getElementById('time-left')
 const score = document.getElementById('score')
 
 let result = 0
 let hitPosition
-let currentTime = 60
+let currentTime = 180
 let timerId = null
+timeleft.textContent = 180
+
+dropDown.addEventListener('click', () => {
+    if (dropDown.selectedIndex === 0) {
+        currentTime = 180
+    } else if (dropDown.selectedIndex === 1) {
+        currentTime = 120
+        timeleft.textContent = currentTime
+    }  else if (dropDown.selectedIndex === 2) {
+        currentTime = 60
+        timeleft.textContent = currentTime
+    } else {
+        currentTime = 30
+        timeleft.textContent = currentTime
+    }
+
+})
 
 function startGame() {
     grid.style.display = "grid"
-
+    difficultySelector.style.display = "none"
 function randomSquare() {
    squares.forEach(square  => {
         square.classList.remove('mole')
@@ -40,7 +63,6 @@ function moveMole() {
 moveMole()
 
 function countDown() {
-
     currentTime--
     timeleft.textContent = currentTime
 
@@ -54,7 +76,8 @@ function countDown() {
         squares.forEach(square  => {
             square.classList.remove('mole')
         })
-        currentTime = 60
+        difficultySelector.style.display = "block"
+        currentTime = 180
         timeleft.textContent = currentTime
         currentTime--
         result++
