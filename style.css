@@ -1,0 +1,150 @@
+body {
+  font-family: "IBM Plex Mono", monospace;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.title {
+  background-image: linear-gradient(
+    45deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(217deg 100% 31%) 10%,
+    hsl(207deg 100% 39%) 20%,
+    hsl(197deg 100% 44%) 30%,
+    hsl(187deg 100% 46%) 40%,
+    hsl(177deg 100% 50%) 50%,
+    hsl(185deg 100% 50%) 60%,
+    hsl(191deg 100% 50%) 70%,
+    hsl(198deg 100% 50%) 80%,
+    hsl(206deg 100% 50%) 90%,
+    hsl(215deg 100% 50%) 100%
+  );
+  padding: 5rem 1rem;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.esse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+#time-left,
+#score {
+  font-weight: 600;
+}
+
+.grid {
+  width: 606px;
+  height: 606px;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  box-sizing: border-box;
+  margin-inline: auto;
+  margin-top: 2rem;
+}
+
+.square {
+  width: 180px;
+  height: 180px;
+  border: 1px solid #000066;
+  background-image: linear-gradient(
+    75deg,
+    hsl(215deg 100% 50%) 0%,
+    hsl(219deg 88% 49%) 19%,
+    hsl(222deg 82% 47%) 36%,
+    hsl(224deg 79% 44%) 52%,
+    hsl(227deg 77% 41%) 65%,
+    hsl(230deg 77% 37%) 75%,
+    hsl(232deg 78% 33%) 82%,
+    hsl(235deg 82% 29%) 87%,
+    hsl(238deg 89% 24%) 92%,
+    hsl(240deg 100% 20%) 100%
+  );
+}
+
+.mole {
+    width: 180px;
+    height: 180px;
+  background-image: url(/mole.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font: inherit;
+  font-size: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  background-image: linear-gradient(
+    75deg,
+    hsl(215deg 100% 50%) 0%,
+    hsl(219deg 88% 49%) 19%,
+    hsl(222deg 82% 47%) 36%,
+    hsl(224deg 79% 44%) 52%,
+    hsl(227deg 77% 41%) 65%,
+    hsl(230deg 77% 37%) 75%,
+    hsl(232deg 78% 33%) 82%,
+    hsl(235deg 82% 29%) 87%,
+    hsl(238deg 89% 24%) 92%,
+    hsl(240deg 100% 20%) 100%
+  );
+  color: white;
+}
+
+button:hover {
+  transform: translateY(10px);
+}
+
+
+@media (max-width: 580px) {
+    body {
+        width: 360px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .grid {
+        width: 300px;
+        height: 300px;
+        gap: .2rem;
+    }
+
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+
+    .title {
+        width: auto;
+        padding: 2rem 2rem;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    button {
+        width: 150px;
+        font-size: 12px;
+    }
+}
