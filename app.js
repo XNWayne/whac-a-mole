@@ -7,7 +7,7 @@ const score = document.getElementById('score')
 
 let result = 0
 let hitPosition
-let currentTime = 60
+let currentTime = 10
 let timerId = null
 
 function startGame() {
@@ -44,17 +44,20 @@ function countDown() {
     currentTime--
     timeleft.textContent = currentTime
 
-    if (currentTime === 0){
+    if (currentTime === -1){
         document.querySelector('#start-game').textContent = "START NEW GAME"
         clearInterval(timerId)
         clearInterval(countDownTimer)
+        alert('GAME OVER! Your final score is' + " " + result)
         result = 0
         score.textContent = result
-        result++
-        currentTime = 60
+        squares.forEach(square  => {
+            square.classList.remove('mole')
+        })
+        currentTime = 10
         timeleft.textContent = currentTime
         currentTime--
-        alert('GAME OVER! Your final score is' + " " + result)
+        result++
     }
 }
 
