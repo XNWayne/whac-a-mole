@@ -7,7 +7,7 @@ const score = document.getElementById('score')
 
 let result = 0
 let hitPosition
-let currentTime = 10
+let currentTime = 60
 let timerId = null
 
 function startGame() {
@@ -54,7 +54,7 @@ function countDown() {
         squares.forEach(square  => {
             square.classList.remove('mole')
         })
-        currentTime = 10
+        currentTime = 60
         timeleft.textContent = currentTime
         currentTime--
         result++
