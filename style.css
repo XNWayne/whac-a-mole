@@ -148,3 +148,17 @@ button:hover {
         font-size: 12px;
     }
 }
+
+@media (max-width: 375px) {
+  
+  .grid {
+    width: 240px;
+    height: 240px;
+    gap: .2rem;
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+}
+}
