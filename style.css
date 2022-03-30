@@ -152,6 +152,8 @@ button:hover {
 @media (max-width: 375px) {
   
   .grid {
+    position: fixed;
+    left: 10%;
     width: 240px;
     height: 240px;
     gap: .2rem;
