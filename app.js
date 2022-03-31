@@ -3,21 +3,25 @@ const squares = document.querySelectorAll('.square')
 const mole = document.querySelector('.mole')
 const dropDown = document.querySelector('select')
 const difficultySelector = document.querySelector('.difficulty')
-// const mediumLevel = document.getElementById('level-2')
-// const easyLevel = document.getElementById('level-1')
-// const hardLevel = document.getElementById('level-3')
-// const asianLevel = document.getElementById('level-4')
+const startGameBtn = document.getElementById('start-game')
+const userTime = document.getElementById('select-time')
 
 const timeleft = document.getElementById('time-left')
 const score = document.getElementById('score')
 
 let result = 0
 let hitPosition
-let currentTime = 180
+let currentTime = 60
+timeleft.textContent = currentTime
 let timerId = null
-timeleft.textContent = 180
 
-dropDown.addEventListener('click', () => {
+function setTime() {
+    let userCustomTime = userTime.value 
+    currentTime = userCustomTime 
+    timeleft.textContent = currentTime
+}
+
+/* dropDown.addEventListener('click', () => {
     if (dropDown.selectedIndex === 0) {
         currentTime = 180
     } else if (dropDown.selectedIndex === 1) {
@@ -31,11 +35,14 @@ dropDown.addEventListener('click', () => {
         timeleft.textContent = currentTime
     }
 
-})
+}) */
 
 function startGame() {
     grid.style.display = "grid"
     difficultySelector.style.display = "none"
+    startGameBtn.style.visibility = 'hidden'
+    moveMole()
+
 function randomSquare() {
    squares.forEach(square  => {
         square.classList.remove('mole')
@@ -58,16 +65,29 @@ squares.forEach(square => {
 })
 
 function moveMole() {
-    timerId = setInterval(randomSquare, 800)
-}
-moveMole()
+    if (dropDown.selectedIndex === 0) {
+        timerId = setInterval(randomSquare, 1000)
+    } else if (dropDown.selectedIndex === 1) {
+        timerId = setInterval(randomSquare, 800)
+    }  else if (dropDown.selectedIndex === 2) {
+        timerId = setInterval(randomSquare, 600)
+    } else if (dropDown.selectedIndex === 3) {
+        timerId = setInterval(randomSquare, 400)
+    } else {
+        timerId = setInterval(randomSquare, 200)
+    }
+
+ }
+
+
 
 function countDown() {
     currentTime--
     timeleft.textContent = currentTime
-
+    
     if (currentTime === -1){
-        document.querySelector('#start-game').textContent = "START NEW GAME"
+            startGameBtn.style.visibility ='visible'
+            startGameBtn.textContent = "START NEW GAME"
         clearInterval(timerId)
         clearInterval(countDownTimer)
         alert('GAME OVER! Your final score is' + " " + result)
@@ -76,13 +96,12 @@ function countDown() {
         squares.forEach(square  => {
             square.classList.remove('mole')
         })
-        difficultySelector.style.display = "block"
-        currentTime = 180
-        timeleft.textContent = currentTime
+        setTime()
         currentTime--
         result++
     }
 }
 
+dropDown.addEventListener('click', moveMole)
 let countDownTimer = setInterval(countDown, 1000)
 }

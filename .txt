@@ -1,0 +1,19 @@
+function moveMole() {
+    dropDown.addEventListener('click', function setSpeed() {
+        if (dropDown.selectedIndex === 0) {
+            timerId = setInterval(randomSquare, 1000)
+        } else if (dropDown.selectedIndex === 1) {
+            timerId = setInterval(randomSquare, 800)
+            timeleft.textContent = currentTime
+        }  else if (dropDown.selectedIndex === 2) {
+            timerId = setInterval(randomSquare, 600)
+            timeleft.textContent = currentTime
+        } else {
+            timerId = setInterval(randomSquare, 400)
+            timeleft.textContent = currentTime
+        }
+    
+    })
+    setSpeed()
+}
+moveMole()

@@ -22,7 +22,8 @@
             <option value="easy" id="level-1" class="options">Easy</option>
             <option value="medium" id="level-2" class="options">Medium</option>
             <option value="hard" id="level-3" class="options">Hard</option>
-            <option value="asian" id="level-4" class="options">Asian</option>
+            <option value="guru" id="level-4" class="options">Guru</option>
+            <option value="asian" id="level-5" class="options">Asian</option>
         </select>
 
     </div>
@@ -34,6 +35,8 @@
 
     <h2>Time Left:
     <span id="time-left">60</span></h2>
+    <input type="number" id="select-time" >
+    <button type="submit" onclick="setTime()">Set</button>
     </div>
 
     <button onclick="startGame()" id="start-game">START GAME</button>

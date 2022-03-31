@@ -46,6 +46,15 @@ h2 {
   padding: 0 5rem;
 }
 
+input{
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 2rem;
+  border: #000066 solid 2px;
+  padding: .5rem .8rem;
+}
+
 #time-left,
 #score {
   font-weight: 600;
